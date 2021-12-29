@@ -12,7 +12,7 @@ public class Menu {
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_UTILISATEUR)) {
 			case 1 :
-				MyLibrary.afficher(compte.infoCompte());
+				MyLibrary.afficher(infoCompte());
 				break;
 			case 2 :
 				
