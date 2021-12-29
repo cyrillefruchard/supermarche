@@ -41,7 +41,9 @@ public class compte {
 	}
 	
 	
-	
+	public String infoCompte() {
+		return "votre solde : " + getSolde();
+	}
 	
 	
 }
