@@ -4,6 +4,6 @@ public class Programme {
 
 	public static void main(String[] args) {
 
-		Menu.CONNECTION();
+		Menu.CONNEXION();
 	}
 }

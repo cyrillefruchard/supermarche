@@ -6,7 +6,7 @@ public class Menu {
 
 	private static String MSG_MENU_UTILISATEUR = "Menu Utilisateur";
 	
-	public static void CONNECTION() {
+	public static void CONNEXION() {
 		boolean sortie = false;
 		while (!sortie) {
 			switch (MyLibrary.intSaisie("CONNEXION\n\n1-LOGIN\n2-MDP\n\n0-Quitter\n\n\n")) {
