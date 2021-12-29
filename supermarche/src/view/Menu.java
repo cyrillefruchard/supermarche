@@ -41,7 +41,6 @@ public class Menu {
 			case 0 :
 				sortie = true;
 				break;
-				//
 			default:
 				MyLibrary.afficher("Erreur");
 				break;
