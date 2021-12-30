@@ -21,7 +21,8 @@ public class UtilisateurController {
 		MyLibrary.afficher(Double.toString(c.getSolde()));
 	}
 	
-	public static void depotArgent(Utilisateur titulaire, double montant) {
+	public static void depotArgent(Utilisateur titulaire) {
+		double montant = MyLibrary.doubleSaisie("saisir le montant du depot");
 		compte c = null;
 		for (compte compte : CompteController.comptes) {
 			if (compte.getTitulaire().equals(titulaire)) {
@@ -31,6 +32,11 @@ public class UtilisateurController {
 		double solde = c.getSolde() + montant;
 		c.setSolde(solde);
 	}
+	
+	public static void demandeGold() {
+		MyLibrary.afficher("Votre demande d'adhesion GOLD à été envoyée à l'admin");
+	}
+	
 	
 
 	public static Utilisateur identificationCompte(String login, String mdp) {

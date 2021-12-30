@@ -32,7 +32,12 @@ public class ProduitController {
 						c = compte;
 					}
 				}
-				c.setSolde(c.getSolde()-produit.getPrix());
+				if (c.getSolde()-produit.getPrix() < 0) {
+					MyLibrary.afficher("pas assez d'argent sur votre compte");
+				}
+				else {
+					c.setSolde(c.getSolde()-produit.getPrix());
+				}
 			}
 		}
 	}

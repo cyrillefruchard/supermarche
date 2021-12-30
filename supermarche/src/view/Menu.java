@@ -74,23 +74,23 @@ private static String MSG_mdp = "Entrer mot de passe";
 ------------------------------------------
 	*/	
 
-	private static String MSG_MENU_UTILISATEUR = "Menu Utilisateur \n\n\n 1 - Solde \n 2 - Demande GOLD \n 3 - Dépots d'argent \n 4 - Acheter produit \n 5 - RDV cantine \n 6 - RDV Médecin";
+	private static String MSG_MENU_UTILISATEUR = "Menu Utilisateur \n\n\n 1 - Solde \n 2 - Demande GOLD \n 3 - Dépots d'argent \n 4 - Acheter produit \n 5 - RDV cantine \n 6 - RDV Médecin \n\n\n 0 - Quitter";
 	
 	public static void menuUtilisateur(Utilisateur user) {
 		boolean sortie = false;
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_UTILISATEUR)) {
 			case 1 :
-				//UtilisateurController.getSoldeUtilisateur(null);
+				UtilisateurController.getSoldeUtilisateur(user);
 				break;
 			case 2 :
-				
+				UtilisateurController.demandeGold();
 				break;
 			case 3 :
-				//UtilisateurController.depotArgent(null, 0);
+				UtilisateurController.depotArgent(user);
 				break;
 			case 4 :
-				//menuAchatProduits();
+				menuAchatProduits(user);
 				break;
 			case 5 :
 	
@@ -156,17 +156,17 @@ private static String MSG_mdp = "Entrer mot de passe";
 					Menu Achat Produits
 	------------------------------------------
 		*/
-private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - liste des produits \n 2 - acheter un produit ";
+private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - liste des produits \n 2 - acheter un produit \n\n\n 0 - Quitter ";
 	
-	public static void menuAchatProduits() {
+	public static void menuAchatProduits(Utilisateur user) {
 		boolean sortie = false;
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_ACHAT_PRODUITS)) {
 			case 1 :
-				//ProduitController.allProduit();
+				ProduitController.allProduit();
 				break;
 			case 2 :
-				//ProduitController.acheterUnProduit(null);
+				ProduitController.acheterUnProduit(user);
 				break;
 			case 0 :
 				sortie = true;
