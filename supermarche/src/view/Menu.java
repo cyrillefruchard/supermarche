@@ -1,6 +1,7 @@
 package view;
 
 import controller.CantineController;
+import controller.CompteController;
 import controller.MyLibrary;
 import controller.ProduitController;
 import controller.UtilisateurController;
@@ -132,10 +133,10 @@ private static String MSG_mdp = "Entrer mot de passe";
 				CantineController.modifMenu();
 				break;
 			case 5 :
-				//Désactivation d'une carte
+				CompteController.desactivateGold(user);
 				break;
 			case 6 :
-				//Activation d'une carte
+				CompteController.activateGold(user);
 				break;
 			case 7 :
 				//Ajouter une promotion sur un produit

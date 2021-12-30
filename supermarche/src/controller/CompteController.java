@@ -6,7 +6,6 @@ import java.util.List;
 import modele.Utilisateur;
 import modele.compte;
 
-
 public class CompteController {
 	
 	public static List<compte> comptes = new ArrayList<>();
@@ -45,6 +44,21 @@ public class CompteController {
 		}
 		MyLibrary.afficher(data);
 	}
-	
+
+	public static void activateGold(Utilisateur user) {
+		for (compte compte : comptes) {
+			if (user == compte.getTitulaire()) {
+				compte.setGold(true);
+			}
+		}
+	}
+
+	public static void desactivateGold(Utilisateur user) {
+		for (compte compte : comptes) {
+			if (user == compte.getTitulaire()) {
+				compte.setGold(false);
+			}
+		}
+	}
 	
 }
