@@ -2,6 +2,7 @@ package view;
 
 import controller.CantineController;
 import controller.CompteController;
+import controller.UtilisateurController;
 import modele.Utilisateur;
 import modele.compte;
 
@@ -12,6 +13,11 @@ public class Programme {
 		Utilisateur u2 = new Utilisateur("user2", "user2", "nomUser2", "prenomUser2",false);
 		Utilisateur u3 = new Utilisateur("user3", "user3", "nomUser3", "prenomUser3",false);
 		Utilisateur u4 = new Utilisateur("admin", "admin", "nomAdmin", "prenomAdmin",true);
+
+		UtilisateurController.utilisateurs.add(u1);
+		UtilisateurController.utilisateurs.add(u2);
+		UtilisateurController.utilisateurs.add(u3);
+		UtilisateurController.utilisateurs.add(u4);
 
 		compte c1 = new compte(50, u1, false);
 		compte c2 = new compte(50, u2, true);
