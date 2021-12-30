@@ -3,13 +3,18 @@ package modele;
 public class Utilisateur {
 
 	private String login;
+	private String motdepasse;
 	private String nom;
 	private String prenom;
-	
-	public Utilisateur(String login, String nom, String prenom) {
+	private boolean admin;
+
+	public Utilisateur(String login, String motdepasse, String nom, String prenom, boolean admin) {
+		super();
 		this.login = login;
+		this.motdepasse = motdepasse;
 		this.nom = nom;
 		this.prenom = prenom;
+		this.admin = admin;
 	}
 
 	public Utilisateur() {
@@ -38,6 +43,22 @@ public class Utilisateur {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	public String getMotdepasse() {
+		return motdepasse;
+	}
+
+	public void setMotdepasse(String motdepasse) {
+		this.motdepasse = motdepasse;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 	
 	
