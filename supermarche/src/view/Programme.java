@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Menu;
+
 import controller.CantineController;
 import controller.CompteController;
 import controller.UtilisateurController;
@@ -60,7 +62,7 @@ public class Programme {
 	}
 	
 	public static void main(String[] args) {
-		CantineController.modifMenu();
+		view.Menu.Connexion();;
 	}
 	
 }
