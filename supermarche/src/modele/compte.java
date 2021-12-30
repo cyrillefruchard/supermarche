@@ -5,7 +5,7 @@ public class compte {
 	private Utilisateur titulaire;
 	private boolean	gold;
 	
-	
+
 
 	public compte(double solde, Utilisateur titulaire, boolean gold) {
 		
