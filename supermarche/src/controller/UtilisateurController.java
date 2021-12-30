@@ -7,8 +7,9 @@ import modele.Utilisateur;
 import modele.compte;
 
 public class UtilisateurController {
-	
-	//public static List<compte> comptes = new ArrayList<>();
+
+	public static List<Utilisateur> utilisateurs = new ArrayList<>();
+
 	
 	public static void getSoldeUtilisateur(Utilisateur titulaire) {
 		compte c = null;
@@ -31,7 +32,16 @@ public class UtilisateurController {
 		c.setSolde(solde);
 	}
 	
-	
-	
-	
+
+	public static Utilisateur identificationCompte(String login, String mdp) {
+		Utilisateur user = null;
+		
+		for (Utilisateur utilisateur : utilisateurs) {
+			if (login.equals(utilisateur.getLogin()) && mdp.equals(utilisateur.getMotdepasse()) ) {
+				user = utilisateur;
+			}
+		}
+		
+		return user;
+	}
 }

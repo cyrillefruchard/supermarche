@@ -3,6 +3,7 @@ package view;
 import controller.MyLibrary;
 import controller.ProduitController;
 import controller.UtilisateurController;
+import modele.Utilisateur;
 import modele.compte;
 
 
@@ -16,31 +17,46 @@ public class Menu {
 ------------------------------------------
 */		
 private static String MSG_identifiant = "Entrer identifiant";	
-private static String MSG_login = "Entrer login";
+private static String MSG_mdp = "Entrer mot de passe";
 	
 	public static void Connexion() {
 		boolean sortie = false;
-		String a="";
-		String b="";
+		String login = "";
+		String mdp = "";
 		String MSG_CONNEXION;
+		Utilisateur user;
+		
 		while (!sortie) {
-			MSG_CONNEXION= "CONNEXION \n\na: "+a+"\nb: "+b+"\n\n\n 1 - Entrer identifiant \n 2 - Entrer mot de passe \n 3 - Valider \n\n\n 0 - Quitter";
+			MSG_CONNEXION = "CONNEXION \n\nIdentifiant : " + login + "\nMot de passe : " + mdp + "\n\n\n 1 - Entrer identifiant \n 2 - Entrer mot de passe \n 3 - Valider \n\n\n 0 - Quitter";
 			switch (MyLibrary.intSaisie(MSG_CONNEXION)) {
 			case 1 :
-				a=MyLibrary.stringSaisie(MSG_identifiant);
+				login = MyLibrary.stringSaisie(MSG_identifiant);
 				break;
 			case 2 :
-				b=MyLibrary.stringSaisie(MSG_login);
+				mdp = MyLibrary.stringSaisie(MSG_mdp);
 				break;
 			case 3:
-				if(a.equals("")|b.equals("")) {
-					MyLibrary.afficher("infos incomplètes");
+				user = UtilisateurController.identificationCompte(login, mdp);
+				
+				if(user != null) {					
+					//menu user
+					//menu admin
+					
+					if (user.isAdmin()) {
+						MyLibrary.afficher("Bienvenue administrateur " + login);
+						menuAdmin(user);
+					}
+					else {
+						MyLibrary.afficher("Bienvenue utilisateur " + login);
+						menuUtilisateur(user);
+					}
+					
 					break;
 				}
 				else {
-					
+					MyLibrary.afficher("infos erronées ou incomplètes");
+					break;
 				}
-				
 			case 0 :
 				sortie = true;
 				break;
@@ -60,7 +76,7 @@ private static String MSG_login = "Entrer login";
 
 	private static String MSG_MENU_UTILISATEUR = "Menu Utilisateur \n\n\n 1 - Solde \n 2 - Demande GOLD \n 3 - Dépots d'argent \n 4 - Acheter produit \n 5 - RDV cantine \n 6 - RDV Médecin";
 	
-	public static void menuUtilisateur() {
+	public static void menuUtilisateur(Utilisateur user) {
 		boolean sortie = false;
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_UTILISATEUR)) {
@@ -100,7 +116,7 @@ private static String MSG_login = "Entrer login";
 	
 	private static String MSG_MENU_PERSON = "Menu Admin \n\n\n Bienvenue administrateur. \n\n\n 1 - Création d'une carte \n 2 - Détails d'une carte utilisateur \n 3 - Gestions des produits \n 4 - Menu de la cantine \n 5 - Désactivation d'une carte \n 6 - Activation d'une carte \n 7 - Ajouter une promotion sur un produit \n\n\n 0 - Quitter";
 	
-	public static void Admin () {
+	public static void menuAdmin (Utilisateur user) {
 		boolean sortie = false;
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_PERSON)) {
