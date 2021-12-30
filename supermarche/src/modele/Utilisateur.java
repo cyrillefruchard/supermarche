@@ -9,7 +9,6 @@ public class Utilisateur {
 	private boolean admin;
 
 	public Utilisateur(String login, String motdepasse, String nom, String prenom, boolean admin) {
-		super();
 		this.login = login;
 		this.motdepasse = motdepasse;
 		this.nom = nom;
