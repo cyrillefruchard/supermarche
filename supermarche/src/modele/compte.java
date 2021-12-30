@@ -42,6 +42,10 @@ public class compte {
 
 	public void setGold(boolean gold) {
 		this.gold = gold;
+	}
+
+	public String afficheCompte() {
+		return "compte [solde=" + solde + ", titulaire=" + titulaire + ", gold=" + gold + "]";
 	}	
 	
 	

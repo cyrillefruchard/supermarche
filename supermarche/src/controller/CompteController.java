@@ -1,10 +1,16 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import modele.Utilisateur;
 import modele.compte;
 
 
 public class CompteController {
+	
+	public static List<compte> comptes = new ArrayList<>();
+	
 
 	public static void creerCompte() {
 		String prenom = MyLibrary.stringSaisie("Entrez le prénom de l'utilisateur");
@@ -29,5 +35,15 @@ public class CompteController {
 
 		Utilisateur u = new Utilisateur(login, mdp, nom, prenom, admin);
 		compte c = new compte(solde, u, gold);
+		comptes.add(c);
 	}
+	
+	public static void allCompte() {
+		String data = "";
+		for (compte compte : comptes) {
+			data += compte.afficheCompte() + "\n";
+		}
+		MyLibrary.afficher(data);
+	}
+	
 }
