@@ -9,6 +9,7 @@ import modele.compte;
 public class CompteController {
 	
 	public static List<compte> comptes = new ArrayList<>();
+	public static List<String> historique = new ArrayList<>();
 	
 
 	public static void creerCompte() {
@@ -54,6 +55,35 @@ public class CompteController {
 		MyLibrary.afficher(data);
 	}
 
+	public static void afficherHistorique() {
+		String data = "";
+		for (String histo : historique) {
+			data += histo + "\n";
+		}
+		MyLibrary.afficher(data);
+	}
+
+	public static void rechercheCompte(String login) {
+		for (compte compte : comptes) {
+			Utilisateur user = compte.getTitulaire();
+			if (login.equals(user.getLogin())) {
+				
+				String data = "";
+				for (String histo : historique) {
+					data += histo + "\n";
+				}
+				MyLibrary.afficher(
+						"Login : " + user.getLogin() + 
+						"\nNom : " + user.getNom() + 
+						"\nPrénom : " + user.getPrenom() + 
+						"\nSolde : " + compte.getSolde() + 
+						"\nGold : " + compte.getGold() +
+						"\n\n\nHistorique : \n" + data
+						);
+			}
+		}
+	}
+	
 	public static void activateGold(Utilisateur user) {
 		for (compte compte : comptes) {
 			if (user == compte.getTitulaire()) {

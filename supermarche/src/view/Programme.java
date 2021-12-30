@@ -44,7 +44,7 @@ public class Programme {
 		ProduitController.produits.add(p4);
 		
 	}
-	
+
 	static {
 		CantineController.entrees.add("Carottes rapées");
 		CantineController.entrees.add("Macédoine");
@@ -59,6 +59,15 @@ public class Programme {
 		CantineController.desserts.add("Tarte aux pommes");
 		CantineController.desserts.add("Fondant au chocolat");
 		CantineController.desserts.add("Salade de fruits");
+	}
+	
+	static {
+		CompteController.historique.add("Tomate");
+		CompteController.historique.add("Fromage");
+		CompteController.historique.add("Olives");
+		CompteController.historique.add("Pain");
+		CompteController.historique.add("Tablette de chocolat");
+		CompteController.historique.add("Ice tea");
 	}
 	
 	public static void main(String[] args) {
