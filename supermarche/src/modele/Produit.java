@@ -4,13 +4,13 @@ public class Produit {
 
 	private String nom_produit;
 	private double prix;
-	private int quantite;
+	private int stock;
 	
-	public Produit(String nom_produit, double prix, int quantite) {
+	public Produit(String nom_produit, double prix, int stock) {
 		
 		this.nom_produit = nom_produit;
 		this.prix = prix;
-		this.quantite = quantite;
+		this.stock = stock;
 	}
 
 	public Produit() {
@@ -33,12 +33,16 @@ public class Produit {
 		this.prix = prix;
 	}
 
-	public int getQuantite() {
-		return quantite;
+	public int getStock() {
+		return stock;
 	}
 
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	
+	public String infoProduit() {
+		return "Produit [nom_produit= " + nom_produit + ", prix= " + prix + ", stock= " + stock + "]";
 	}
 	
 	

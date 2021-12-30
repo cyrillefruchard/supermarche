@@ -1,6 +1,8 @@
 package view;
 
 import controller.MyLibrary;
+import controller.ProduitController;
+import controller.UtilisateurController;
 import modele.compte;
 
 
@@ -63,16 +65,16 @@ private static String MSG_login = "Entrer login";
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_UTILISATEUR)) {
 			case 1 :
-				
+				//UtilisateurController.getSoldeUtilisateur(null);
 				break;
 			case 2 :
 				
 				break;
 			case 3 :
-				
+				//UtilisateurController.depotArgent(null, 0);
 				break;
 			case 4 :
-	
+				//menuAchatProduits();
 				break;
 			case 5 :
 	
@@ -138,23 +140,17 @@ private static String MSG_login = "Entrer login";
 					Menu Achat Produits
 	------------------------------------------
 		*/
-private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - Nom Produit \n 2 - Quantite Produit \n 3 - Panier \n 4 - Enregistrer ";
+private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - liste des produits \n 2 - acheter un produit ";
 	
 	public static void menuAchatProduits() {
 		boolean sortie = false;
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_ACHAT_PRODUITS)) {
 			case 1 :
-				
+				//ProduitController.allProduit();
 				break;
 			case 2 :
-				
-				break;
-			case 3 :
-				
-				break;
-			case 4 :
-	
+				//ProduitController.acheterUnProduit(null);
 				break;
 			case 0 :
 				sortie = true;

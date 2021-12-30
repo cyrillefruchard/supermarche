@@ -1,6 +1,8 @@
 package view;
 
 import controller.CompteController;
+import controller.ProduitController;
+import modele.Produit;
 import modele.Utilisateur;
 import modele.compte;
 
@@ -21,6 +23,17 @@ public class Programme {
 		CompteController.comptes.add(c2);
 		CompteController.comptes.add(c3);
 		CompteController.comptes.add(c4);
+		
+		Produit p1 = new Produit("chocolat", 10, 50);
+		Produit p2 = new Produit("croissant", 1, 20);
+		Produit p3 = new Produit("bonbon", 0.5, 2);
+		Produit p4 = new Produit("cafe", 0.5, 15);
+		
+		ProduitController.produits.add(p1);
+		ProduitController.produits.add(p2);
+		ProduitController.produits.add(p3);
+		ProduitController.produits.add(p4);
+		
 	}
 	
 	public static void main(String[] args) {
