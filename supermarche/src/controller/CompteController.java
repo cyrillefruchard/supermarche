@@ -17,6 +17,7 @@ public class CompteController {
 		String login = MyLibrary.stringSaisie("Entrez le login de l'utilisateur");
 		String mdp = MyLibrary.stringSaisie("Entrez le mot de passe de l'utilisateur");
 		boolean admin = false;
+		boolean medecin = false;
 		
 		int newAdmin = -1;
 		while (newAdmin != 0 && newAdmin != 1) {
@@ -32,7 +33,7 @@ public class CompteController {
 		MyLibrary.afficher("Le compte ne possède pas l'option gold par défault.");
 		
 
-		Utilisateur u = new Utilisateur(login, mdp, nom, prenom, admin);
+		Utilisateur u = new Utilisateur(login, mdp, nom, prenom, admin, medecin);
 		compte c = new compte(solde, u, gold);
 		comptes.add(c);
 	}
