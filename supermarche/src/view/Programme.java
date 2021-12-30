@@ -41,7 +41,7 @@ public class Programme {
 	}
 	
 	public static void main(String[] args) {
-		Menu.Connexion();
+		CantineController.modifMenu();
 	}
 	
 }
