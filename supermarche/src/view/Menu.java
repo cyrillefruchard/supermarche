@@ -166,7 +166,10 @@ private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - 
 				ProduitController.allProduit();
 				break;
 			case 2 :
-				ProduitController.acheterUnProduit(user);
+				ProduitController.ajouterProduitPanier();
+				break;
+			case 3 :
+				ProduitController.validerPanier(user);
 				break;
 			case 0 :
 				sortie = true;

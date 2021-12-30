@@ -21,33 +21,33 @@ public class ProduitController {
 		MyLibrary.afficher(data);
 	}
 	
-	public static void acheterUnProduit(Utilisateur user) {
-		String p = MyLibrary.stringSaisie("Quel produit souhaitez-vous acheter ? ");
-		for (Produit produit : produits) {
-			if (p.equals(produit.getNom_produit())) {
-				if (produit.getStock() == 0) {
-					MyLibrary.afficher("produit non disponible");
-				}
-				else {
-					produit.setStock(produit.getStock()-1); // le stock de ce produit diminue de 1
-					
-					// le solde du compte de l'utilisateur est réduit d'un montant = prix du produit
-					compte c = null;
-					for (compte compte : CompteController.comptes) {
-						if(compte.getTitulaire().equals(user)) {
-							c = compte;
-						}
-					}
-					if (c.getSolde()-produit.getPrix() < 0) {
-						MyLibrary.afficher("pas assez d'argent sur votre compte");
-					}
-					else {
-						c.setSolde(c.getSolde()-produit.getPrix());
-					}
-				}
-			}
-		}
-	}
+//	public static void acheterUnProduit(Utilisateur user) {
+//		String p = MyLibrary.stringSaisie("Quel produit souhaitez-vous acheter ? ");
+//		for (Produit produit : produits) {
+//			if (p.equals(produit.getNom_produit())) {
+//				if (produit.getStock() == 0) {
+//					MyLibrary.afficher("produit non disponible");
+//				}
+//				else {
+//					produit.setStock(produit.getStock()-1); // le stock de ce produit diminue de 1
+//					
+//					// le solde du compte de l'utilisateur est réduit d'un montant = prix du produit
+//					compte c = null;
+//					for (compte compte : CompteController.comptes) {
+//						if(compte.getTitulaire().equals(user)) {
+//							c = compte;
+//						}
+//					}
+//					if (c.getSolde()-produit.getPrix() < 0) {
+//						MyLibrary.afficher("pas assez d'argent sur votre compte");
+//					}
+//					else {
+//						c.setSolde(c.getSolde()-produit.getPrix());
+//					}
+//				}
+//			}
+//		}
+//	}
 	
 	public static void ajouterProduitPanier() {
 		String p = MyLibrary.stringSaisie("Quel produit souhaitez-vous acheter ? ");
@@ -67,9 +67,49 @@ public class ProduitController {
 		
 	}
 	
-	public static void validerPanier() {
+	public static void validerPanier(Utilisateur user) {
 		for (String element : panier) {
 			MyLibrary.afficher(element + " \n");
+		}
+		int valider = MyLibrary.intSaisie(" Entrer 1 pour valider la commande, 2 pour l'annuler, 0 pour revenir en arrière ");
+		switch (valider) {
+		case 1:
+			for (String element : panier) {
+				for (Produit produit : produits) {
+					if (element.equals(produit.getNom_produit())) {
+						
+							produit.setStock(produit.getStock()-1); // le stock de ce produit diminue de 1
+							
+							// le solde du compte de l'utilisateur est réduit d'un montant = prix du produit
+							compte c = null;
+							for (compte compte : CompteController.comptes) {
+								if(compte.getTitulaire().equals(user)) {
+									c = compte;
+								}
+							}
+							if (c.getSolde()-produit.getPrix() < 0) {
+								MyLibrary.afficher("pas assez d'argent sur votre compte");
+							}
+							else {
+								c.setSolde(c.getSolde()-produit.getPrix());
+							}
+						
+					}
+				}
+				
+			}
+			
+			panier = null;
+			break;
+		case 2:
+			
+			break;
+		case 0:
+	
+	break;
+
+		default:
+			break;
 		}
 		
 	}
