@@ -133,7 +133,37 @@ private static String MSG_login = "Entrer login";
 		}
 	}
 	
+	/* 
+	------------------------------------------
+					Menu Achat Produits
+	------------------------------------------
+		*/
+private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - Nom Produit \n 2 - Quantite Produit \n 3 - Panier \n 4 - Enregistrer ";
 	
+	public static void menuAchatProduits() {
+		boolean sortie = false;
+		while (!sortie) {
+			switch (MyLibrary.intSaisie(MSG_MENU_ACHAT_PRODUITS)) {
+			case 1 :
+				
+				break;
+			case 2 :
+				
+				break;
+			case 3 :
+				
+				break;
+			case 4 :
 	
+				break;
+			case 0 :
+				sortie = true;
+				break;
+			default:
+				MyLibrary.afficher("erreur");
+				break;
+			}
+		}
+	}
 	
 }
