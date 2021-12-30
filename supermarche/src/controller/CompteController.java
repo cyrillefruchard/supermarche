@@ -18,13 +18,21 @@ public class CompteController {
 		String mdp = MyLibrary.stringSaisie("Entrez le mot de passe de l'utilisateur");
 		boolean admin = false;
 		boolean medecin = false;
-		
+
 		int newAdmin = -1;
 		while (newAdmin != 0 && newAdmin != 1) {
 			 newAdmin = MyLibrary.intSaisie("Est-ce un admin ? \n\n\n 0 - Non \n 1 - Oui");
 		}
 		if (newAdmin == 1) {
 			 admin = true;
+		}
+		
+		int newMedecin = -1;
+		while (newMedecin != 0 && newMedecin != 1) {
+			newMedecin = MyLibrary.intSaisie("Est-ce un medecin ? \n\n\n 0 - Non \n 1 - Oui");
+		}
+		if (newMedecin == 1) {
+			 medecin = true;
 		}
 		
 		Double solde = 50.00;
