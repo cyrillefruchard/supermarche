@@ -3,7 +3,7 @@ package modele;
 public class rdvmedecin {
 
 	private String medecin;
-	private String patient;
+	private Utilisateur patient;
 	private String date;
 	private String heuredebut;
 	private String heurefin;
@@ -11,12 +11,10 @@ public class rdvmedecin {
 	
 	
 	
-	
-	
 	public rdvmedecin() {
 	}
 	
-	public rdvmedecin(String medecin, String patient, String date, String heuredebut, String heurefin, double prix) {
+	public rdvmedecin(String medecin, Utilisateur patient, String date, String heuredebut, String heurefin, double prix) {
 		this.medecin = medecin;
 		this.patient = patient;
 		this.date = date;
@@ -31,10 +29,10 @@ public class rdvmedecin {
 	public void setMedecin(String medecin) {
 		this.medecin = medecin;
 	}
-	public String getPatient() {
+	public Utilisateur getPatient() {
 		return patient;
 	}
-	public void setPatient(String patient) {
+	public void setPatient(Utilisateur patient) {
 		this.patient = patient;
 	}
 	public String getDate() {
