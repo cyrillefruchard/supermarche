@@ -6,8 +6,6 @@ import controller.MyLibrary;
 import controller.ProduitController;
 import controller.UtilisateurController;
 import modele.Utilisateur;
-import modele.compte;
-
 
 
 
