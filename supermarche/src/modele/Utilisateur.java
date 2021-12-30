@@ -7,14 +7,24 @@ public class Utilisateur {
 	private String nom;
 	private String prenom;
 	private boolean admin;
+	private boolean medecin;
 
-	public Utilisateur(String login, String motdepasse, String nom, String prenom, boolean admin) {
+	public boolean isMedecin() {
+		return medecin;
+	}
+
+	public void setMedecin(boolean medecin) {
+		this.medecin = medecin;
+	}
+
+	public Utilisateur(String login, String motdepasse, String nom, String prenom, boolean admin, boolean medecin) {
 
 		this.login = login;
 		this.motdepasse = motdepasse;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.admin = admin;
+		this.medecin = medecin;
 	}
 
 	public Utilisateur() {

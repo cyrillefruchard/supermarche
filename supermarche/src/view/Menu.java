@@ -1,5 +1,7 @@
 package view;
 
+import controller.CantineController;
+import controller.CompteController;
 import controller.MyLibrary;
 import controller.ProduitController;
 import controller.UtilisateurController;
@@ -38,9 +40,7 @@ private static String MSG_mdp = "Entrer mot de passe";
 			case 3:
 				user = UtilisateurController.identificationCompte(login, mdp);
 				
-				if(user != null) {					
-					//menu user
-					//menu admin
+				if(user != null) {			
 					
 					if (user.isAdmin()) {
 						MyLibrary.afficher("Bienvenue administrateur " + login);
@@ -130,13 +130,13 @@ private static String MSG_mdp = "Entrer mot de passe";
 				//Gestions des produits
 				break;
 			case 4 :
-				//Menu de la cantine
+				CantineController.modifMenu();
 				break;
 			case 5 :
-				//Désactivation d'une carte
+				CompteController.desactivateGold(user);
 				break;
 			case 6 :
-				//Activation d'une carte
+				CompteController.activateGold(user);
 				break;
 			case 7 :
 				//Ajouter une promotion sur un produit

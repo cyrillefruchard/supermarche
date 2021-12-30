@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Menu;
+
 import controller.CantineController;
 import controller.CompteController;
 import controller.UtilisateurController;
@@ -11,10 +13,10 @@ import modele.compte;
 public class Programme {
 	
 	static {
-		Utilisateur u1 = new Utilisateur("user1", "user1", "nomUser1", "prenomUser1",false);
-		Utilisateur u2 = new Utilisateur("user2", "user2", "nomUser2", "prenomUser2",false);
-		Utilisateur u3 = new Utilisateur("user3", "user3", "nomUser3", "prenomUser3",false);
-		Utilisateur u4 = new Utilisateur("admin", "admin", "nomAdmin", "prenomAdmin",true);
+		Utilisateur u1 = new Utilisateur("user1", "user1", "nomUser1", "prenomUser1",false,false);
+		Utilisateur u2 = new Utilisateur("user2", "user2", "nomUser2", "prenomUser2",false,true);
+		Utilisateur u3 = new Utilisateur("user3", "user3", "nomUser3", "prenomUser3",false,true);
+		Utilisateur u4 = new Utilisateur("admin", "admin", "nomAdmin", "prenomAdmin",true,true);
 
 		UtilisateurController.utilisateurs.add(u1);
 		UtilisateurController.utilisateurs.add(u2);
@@ -60,7 +62,7 @@ public class Programme {
 	}
 	
 	public static void main(String[] args) {
-		Menu.Connexion();
+		view.Menu.Connexion();;
 	}
 	
 }
