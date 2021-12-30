@@ -42,7 +42,7 @@ public class Produit {
 	}
 	
 	public String infoProduit() {
-		return "Produit [nom_produit= " + nom_produit + ", prix= " + prix + ", stock= " + stock + "]";
+		return  nom_produit + ", prix : " + prix + "€, stock : " + stock;
 	}
 	
 	

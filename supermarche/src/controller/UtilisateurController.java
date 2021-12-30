@@ -18,7 +18,7 @@ public class UtilisateurController {
 				c = compte;
 			}
 		}
-		MyLibrary.afficher(Double.toString(c.getSolde()));
+		MyLibrary.afficher("Votre solde est de : " + Double.toString(c.getSolde()) + "€");
 	}
 	
 	public static void depotArgent(Utilisateur titulaire) {

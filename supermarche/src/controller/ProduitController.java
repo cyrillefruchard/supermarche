@@ -23,20 +23,25 @@ public class ProduitController {
 		String p = MyLibrary.stringSaisie("Quel produit souhaitez-vous acheter ? ");
 		for (Produit produit : produits) {
 			if (p.equals(produit.getNom_produit())) {
-				produit.setStock(produit.getStock()-1); // le stock de ce produit diminue de 1
-				
-				// le solde du compte de l'utilisateur est réduit d'un montant = prix du produit
-				compte c = null;
-				for (compte compte : CompteController.comptes) {
-					if(compte.getTitulaire().equals(user)) {
-						c = compte;
-					}
-				}
-				if (c.getSolde()-produit.getPrix() < 0) {
-					MyLibrary.afficher("pas assez d'argent sur votre compte");
+				if (produit.getStock() == 0) {
+					MyLibrary.afficher("produit non disponible");
 				}
 				else {
-					c.setSolde(c.getSolde()-produit.getPrix());
+					produit.setStock(produit.getStock()-1); // le stock de ce produit diminue de 1
+					
+					// le solde du compte de l'utilisateur est réduit d'un montant = prix du produit
+					compte c = null;
+					for (compte compte : CompteController.comptes) {
+						if(compte.getTitulaire().equals(user)) {
+							c = compte;
+						}
+					}
+					if (c.getSolde()-produit.getPrix() < 0) {
+						MyLibrary.afficher("pas assez d'argent sur votre compte");
+					}
+					else {
+						c.setSolde(c.getSolde()-produit.getPrix());
+					}
 				}
 			}
 		}

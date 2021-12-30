@@ -74,7 +74,7 @@ private static String MSG_mdp = "Entrer mot de passe";
 ------------------------------------------
 	*/	
 
-	private static String MSG_MENU_UTILISATEUR = "Menu Utilisateur \n\n\n 1 - Solde \n 2 - Demande GOLD \n 3 - Dépots d'argent \n 4 - Acheter produit \n 5 - RDV cantine \n 6 - RDV Médecin \n\n\n 0 - Quitter";
+	private static String MSG_MENU_UTILISATEUR = "Menu Utilisateur \n\n\n 1 - Solde \n 2 - Demande GOLD \n 3 - Dépots d'argent \n 4 - Acheter produit \n 5 - RDV cantine \n 6 - RDV Médecin \n\n\n 0 - Retour";
 	
 	public static void menuUtilisateur(Utilisateur user) {
 		boolean sortie = false;
@@ -114,7 +114,7 @@ private static String MSG_mdp = "Entrer mot de passe";
 ------------------------------------------
 	*/
 	
-	private static String MSG_MENU_PERSON = "Menu Admin \n\n\n Bienvenue administrateur. \n\n\n 1 - Création d'une carte \n 2 - Détails d'une carte utilisateur \n 3 - Gestions des produits \n 4 - Menu de la cantine \n 5 - Désactivation d'une carte \n 6 - Activation d'une carte \n 7 - Ajouter une promotion sur un produit \n\n\n 0 - Quitter";
+	private static String MSG_MENU_PERSON = "Menu Admin \n\n\n Bienvenue administrateur. \n\n\n 1 - Création d'une carte \n 2 - Détails d'une carte utilisateur \n 3 - Gestions des produits \n 4 - Menu de la cantine \n 5 - Désactivation d'une carte \n 6 - Activation d'une carte \n 7 - Ajouter une promotion sur un produit \n\n\n 0 - Retour";
 	
 	public static void menuAdmin (Utilisateur user) {
 		boolean sortie = false;
@@ -156,7 +156,7 @@ private static String MSG_mdp = "Entrer mot de passe";
 					Menu Achat Produits
 	------------------------------------------
 		*/
-private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - liste des produits \n 2 - acheter un produit \n\n\n 0 - Quitter ";
+private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - liste des produits \n 2 - acheter un produit \n\n\n 0 - Retour ";
 	
 	public static void menuAchatProduits(Utilisateur user) {
 		boolean sortie = false;
