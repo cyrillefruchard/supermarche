@@ -3,13 +3,15 @@ package modele;
 public class compte {
 	private double solde;
 	private Utilisateur titulaire;
+	private boolean	gold;
 	
 	
 
-	public compte(double solde, Utilisateur titulaire) {
+	public compte(double solde, Utilisateur titulaire, boolean gold) {
 		
 		this.solde = solde;
 		this.titulaire = titulaire;
+		this.gold = gold;
 	}
 
 
@@ -34,8 +36,13 @@ public class compte {
 		this.titulaire = titulaire;
 	}
 	
-	
-	
+	public boolean getGold() {
+		return gold;
+	}
+
+	public void setGold(boolean gold) {
+		this.gold = gold;
+	}	
 	
 	
 }

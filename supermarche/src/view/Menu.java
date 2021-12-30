@@ -41,7 +41,7 @@ private static String MSG_CONNEXION = "CONNEXION \n\n\n 1 - Entrer identifiant \
 		while (!sortie) {
 			switch (MyLibrary.intSaisie(MSG_MENU_UTILISATEUR)) {
 			case 1 :
-				MyLibrary.afficher(infoCompte());
+				
 				break;
 			case 2 :
 				
