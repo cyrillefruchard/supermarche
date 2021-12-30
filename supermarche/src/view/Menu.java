@@ -4,6 +4,35 @@ import controller.MyLibrary;
 import modele.compte;
 
 public class Menu {
+	
+private static String MSG_CONNEXION = "CONNEXION \n\n\n 1 - Entrer identifiant \n 2 - Entrer mot de passe \n\n\n 0 - Quitter";
+	
+	public static void Connexion() {
+		boolean sortie = false;
+		while (!sortie) {
+			switch (MyLibrary.intSaisie(MSG_CONNEXION)) {
+			case 1 :
+				
+				break;
+			case 2 :
+				
+				break;
+			case 0 :
+				sortie = true;
+				break;
+			default:
+				MyLibrary.afficher("erreur");
+				break;
+			}
+		}
+	}
+	
+	
+	/* 
+------------------------------------------
+				Menu Utilisateur
+------------------------------------------
+	*/	
 
 	private static String MSG_MENU_UTILISATEUR = "Menu Utilisateur \n\n\n 1 - Solde \n 2 - Demande GOLD \n 3 - Dépots d'argent \n 4 - Acheter produit \n 5 - RDV cantine \n 6 - RDV Médecin";
 	
@@ -81,4 +110,8 @@ public class Menu {
 			}
 		}
 	}
+	
+	
+	
+	
 }
