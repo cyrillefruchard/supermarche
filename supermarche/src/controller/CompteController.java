@@ -54,6 +54,24 @@ public class CompteController {
 		MyLibrary.afficher(data);
 	}
 
+	public static void rechercheCompte(String login) {
+		for (compte compte : comptes) {
+			Utilisateur user = compte.getTitulaire();
+			if (login.equals(user.getLogin())) {
+				MyLibrary.afficher(
+						"Login : " + user.getLogin() + 
+						"\nNom : " + user.getNom() + 
+						"\nPrénom : " + user.getPrenom() + 
+						"\nSolde : " + compte.getSolde() + 
+						"\nGold : " + compte.getGold() +
+						"\n\n\nHistorique : \n" 
+						// Historique
+						);
+			}
+		}
+	}
+	
+	
 	public static void activateGold(Utilisateur user) {
 		for (compte compte : comptes) {
 			if (user == compte.getTitulaire()) {

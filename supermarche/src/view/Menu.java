@@ -124,7 +124,7 @@ private static String MSG_mdp = "Entrer mot de passe";
 				//Création d'une carte 
 				break;
 			case 2 :
-				//Détails d'une carte utilisateur
+				CompteController.rechercheCompte(MyLibrary.stringSaisie("Donner le login de l'utilisateur"));
 				break;
 			case 3 :
 				//Gestions des produits
