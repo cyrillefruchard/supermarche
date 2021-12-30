@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import modele.Produit;
@@ -10,6 +11,7 @@ import modele.compte;
 public class ProduitController {
 	
 	public static List<Produit> produits = new ArrayList<>();
+	public static List<String> panier = new ArrayList<>();
 
 	public static void allProduit() {
 		String data = "";
@@ -46,5 +48,51 @@ public class ProduitController {
 			}
 		}
 	}
+	
+	public static void ajouterProduitPanier() {
+		String p = MyLibrary.stringSaisie("Quel produit souhaitez-vous acheter ? ");
+		int q = MyLibrary.intSaisie(" En quelle quantite ? ");
+		for (Produit produit : produits) {
+			if (p.equals(produit.getNom_produit())) {
+				if (produit.getStock() == 0) {
+					MyLibrary.afficher("produit non disponible");
+				}
+				else {
+					for (int i = 0; i<q; i++) {
+						panier.add(p);
+					}
+				}
+			}
+		}
+		
+	}
+	
+	public static void validerPanier() {
+		for (String element : panier) {
+			MyLibrary.afficher(element + " \n");
+		}
+		
+	}
+	
+	
+//	public static void ajoutProduit() {
+//		String produit = MyLibrary.stringSaisie("Entrer le nom du produit à ajouter ");
+//		double prix = MyLibrary.doubleSaisie("Entrer le prix ");
+//		int stock = MyLibrary.intSaisie("Entrer le stock");
+//		
+//	}
+//	
+//	public static void supprimerProduit() {
+//		
+//	}
+//	
+//	public static void modifierPrix() {
+//		
+//	}
+//	
+//	public static void modifierStock() {
+//	
+//	}
+	
 	
 }

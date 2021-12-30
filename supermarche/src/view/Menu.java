@@ -156,7 +156,7 @@ private static String MSG_mdp = "Entrer mot de passe";
 					Menu Achat Produits
 	------------------------------------------
 		*/
-private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - liste des produits \n 2 - acheter un produit \n\n\n 0 - Retour ";
+private static String MSG_MENU_ACHAT_PRODUITS = "Menu Achat Produits \n\n\n 1 - liste des produits \n 2 - ajouter un produit au panier \n 3 - Valider le panier \n\n\n 0 - Retour ";
 	
 	public static void menuAchatProduits(Utilisateur user) {
 		boolean sortie = false;
